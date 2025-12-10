@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, q, r;
+
+    printf("Donnez le premier nombre : ");
+    scanf("%d", &a);
+
+    printf("Donnez le deuxieme nombre : ");
+    scanf("%d", &b);
+
+    printf("\n--- Calcul du PGCD(%d, %d) ---\n", a, b);
+
+    int x = a, y = b;
+
+    while (y != 0) {
+        q = x / y;      
+        r = x % y;      
+
+        
+        printf("%d = %d × %d + %d\n", x, y, q, r);
+
+        x = y;
+        y = r;
+    }
+
+    printf("=> Le PGCD est : %d\n", x);
+
+    return 0;
+}
